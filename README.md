@@ -1,10 +1,10 @@
-# use-media-query [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
+# use-media-query3 [![NPM version][npm-image]][npm-url] [![Downloads][downloads-image]][npm-url]
 
 ## Information
 
 <table>
 <tr>
-<td>Package</td><td>use-media-query</td>
+<td>Package</td><td>use-media-query3</td>
 </tr>
 <tr>
 <td>Description</td>
@@ -21,7 +21,7 @@ The best supported, easiest to use react media query module.
 ## Install
 
 ```console
-$ npm install use-media-query --save
+$ npm install use-media-query3 --save
 ```
 
 ## Example Usage
@@ -32,7 +32,7 @@ Hooks is a new feature available in 8.0.0!
 
 ```jsx
 import React from 'react'
-import { useMediaQuery } from 'use-media-query'
+import { useMediaQuery } from 'use-media-query3'
 
 const Example = () => {
   const isDesktopOrLaptop = useMediaQuery({
@@ -59,7 +59,7 @@ const Example = () => {
 ### With Components
 
 ```jsx
-import MediaQuery from 'use-media-query'
+import MediaQuery from 'use-media-query3'
 
 const Example = () => (
   <div>
@@ -86,7 +86,7 @@ const Example = () => (
 
 To make things more idiomatic to react, you can use camel-cased shorthands to construct media queries.
 
-For a list of all possible shorthands and value types see https://github.com/idimetrix/use-media-query/blob/master/src/mediaQuery.ts#L9.
+For a list of all possible shorthands and value types see https://github.com/idimetrix/use-media-query3/blob/master/src/mediaQuery.ts#L9.
 
 Any numbers given as shorthand will be expanded to px (`1234` will become `'1234px'`).
 
@@ -94,7 +94,7 @@ The CSS media queries in the example above could be constructed like this:
 
 ```jsx
 import React from 'react'
-import { useMediaQuery } from 'use-media-query'
+import { useMediaQuery } from 'use-media-query3'
 
 const Example = () => {
   const isDesktopOrLaptop = useMediaQuery({ minWidth: 1224 })
@@ -125,7 +125,7 @@ At times you may need to render components with different device settings than w
 Note: The `device` property always applies, even when it can be detected (where window.matchMedia exists).
 
 ```jsx
-import { useMediaQuery } from 'use-media-query'
+import { useMediaQuery } from 'use-media-query3'
 
 const Example = () => {
   const isDesktopOrLaptop = useMediaQuery(
@@ -154,7 +154,7 @@ This should ease up server-side-rendering and testing in a Node environment, e.g
 ##### Server-Side Rendering
 
 ```jsx
-import { Context as ResponsiveContext } from 'use-media-query'
+import { Context as ResponsiveContext } from 'use-media-query3'
 import { renderToString } from 'react-dom/server'
 import App from './App'
 
@@ -172,7 +172,7 @@ If you use next.js, structure your import like this to disable server-side rende
 
 ```js
 import dynamic from 'next/dynamic'
-const MediaQuery = dynamic(() => import('use-media-query'), {
+const MediaQuery = dynamic(() => import('use-media-query3'), {
   ssr: false
 })
 ```
@@ -180,7 +180,7 @@ const MediaQuery = dynamic(() => import('use-media-query'), {
 ##### Testing
 
 ```jsx
-import { Context as ResponsiveContext } from 'use-media-query'
+import { Context as ResponsiveContext } from 'use-media-query3'
 import { render } from '@testing-library/react'
 import ProductsListing from './ProductsListing'
 
@@ -211,7 +211,7 @@ You can use the `onChange` callback to specify a change handler that will be cal
 
 ```jsx
 import React from 'react'
-import { useMediaQuery } from 'use-media-query'
+import { useMediaQuery } from 'use-media-query3'
 
 const Example = () => {
   const handleMediaQueryChange = (matches) => {
@@ -229,7 +229,7 @@ const Example = () => {
 
 ```jsx
 import React from 'react'
-import MediaQuery from 'use-media-query'
+import MediaQuery from 'use-media-query3'
 
 const Example = () => {
   const handleMediaQueryChange = (matches) => {
@@ -249,7 +249,7 @@ const Example = () => {
 That's it! Now you can create your application specific breakpoints and reuse them easily. Here is an example:
 
 ```jsx
-import { useMediaQuery } from 'use-media-query'
+import { useMediaQuery } from 'use-media-query3'
 
 const Desktop = ({ children }) => {
   const isDesktop = useMediaQuery({ minWidth: 992 })
@@ -283,7 +283,7 @@ export default Example
 And if you want a combo (the DRY way):
 
 ```js
-import { useMediaQuery } from 'use-media-query'
+import { useMediaQuery } from 'use-media-query3'
 
 const useDesktopMediaQuery = () =>
   useMediaQuery({ query: '(min-width: 1280px)' })
@@ -342,6 +342,6 @@ Pretty much everything. Check out these polyfills:
 - [matchMedia.js by Paul Irish](https://github.com/paulirish/matchMedia.js/)
 - [media-match (faster, but larger and lacking some features)](https://github.com/weblinc/media-match)
 
-[downloads-image]: http://img.shields.io/npm/dm/use-media-query.svg
-[npm-url]: https://npmjs.org/package/use-media-query
-[npm-image]: http://img.shields.io/npm/v/use-media-query.svg
+[downloads-image]: http://img.shields.io/npm/dm/use-media-query3.svg
+[npm-url]: https://npmjs.org/package/use-media-query3
+[npm-image]: http://img.shields.io/npm/v/use-media-query3.svg
