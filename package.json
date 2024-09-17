@@ -1,0 +1,104 @@
+{
+  "name": "use-media-query",
+  "description": "Media queries in react for responsive (adaptive) design",
+  "version": "1.0.0",
+  "homepage": "http://github.com/idimetrix/use-media-query",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/idimetrix/use-media-query.git"
+  },
+  "author": {
+    "name": "Dmitrii Selikhov",
+    "email": "dmitrii.selikhov@gmail.com",
+    "url": "https://www.linkedin.com/in/dimetrix"
+  },
+  "contributors": [
+    {
+      "name": "Dmitrii Selikhov",
+      "email": "dmitrii.selikhov@gmail.com",
+      "url": "https://www.linkedin.com/in/dimetrix"
+    }
+  ],
+  "license": "MIT",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "css",
+    "react-component",
+    "viewport",
+    "react",
+    "mobile",
+    "media queries",
+    "respond",
+    "media query",
+    "matchMedia",
+    "responsive",
+    "component"
+  ],
+  "dependencies": {
+    "hyphenate-style-name": "1.1.0",
+    "matchmediaquery": "0.4.2",
+    "prop-types": "15.8.1",
+    "shallow-equal": "3.1.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.1.0",
+    "@eslint/js": "9.10.0",
+    "@rollup/plugin-typescript": "11.1.6",
+    "@types/chai": "4.3.19",
+    "@types/jsdom": "21.1.7",
+    "@types/match-media-mock": "0.1.8",
+    "@types/matchmediaquery": "0.3.3",
+    "@types/mocha": "10.0.8",
+    "@types/react": "18.3.6",
+    "@types/react-dom": "18.3.0",
+    "@types/sinon": "17.0.3",
+    "@typescript-eslint/eslint-plugin": "8.6.0",
+    "@typescript-eslint/parser": "8.6.0",
+    "chai": "5.1.1",
+    "cross-env": "7.0.3",
+    "eslint": "9.10.0",
+    "eslint-plugin-compat": "6.0.1",
+    "gh-pages": "6.1.1",
+    "jsdom": "25.0.0",
+    "match-media-mock": "0.1.1",
+    "mocha": "10.7.3",
+    "prettier": "3.3.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "rollup": "4.21.3",
+    "rollup-plugin-node-externals": "7.1.3",
+    "should": "13.2.3",
+    "sinon": "19.0.2",
+    "tslib": "2.7.0",
+    "tsx": "4.19.1",
+    "typedoc": "0.26.7",
+    "typescript": "5.6.2"
+  },
+  "scripts": {
+    "preversion": "npm run clean && npm run build",
+    "postpublish": "npm run tag && npm run docs",
+    "prebuild": "npm run clean",
+    "build:types": "tsc --outDir ./dist/types --declaration --emitDeclarationOnly",
+    "build:lib": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "build": "npm run build:lib && npm run build:types",
+    "build:watch": "npm run build -- --watch",
+    "clean": "rimraf dist",
+    "tag": "git tag -a \"v$npm_package_version\" -m \"tag version $npm_package_version\" && git push origin master --tags",
+    "lint": "eslint . src test --fix && prettier . src test --write",
+    "test": "npx mocha -R spec ./test/setup.js test/*_test.{ts,tsx}",
+    "docs": "typedoc src/index.ts && gh-pages -d docs"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
